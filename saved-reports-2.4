@@ -1,0 +1,103 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Options for saved report "PayPal Tax Invoice", based on template "ffaaf1faa7c84853b72e8d544f2f532a"
+(let ()
+ (define (options-gen)
+  (let ((options (gnc:report-template-new-options/report-guid "ffaaf1faa7c84853b72e8d544f2f532a" "PayPal Tax Invoice")))
+
+; Section: Elements
+
+(let ((option (gnc:lookup-option options
+                                 "Elements"
+                                 "row: Contact")))
+  ((lambda (option) (if option ((gnc:option-setter option) #f))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Elements"
+                                 "column: Date")))
+  ((lambda (option) (if option ((gnc:option-setter option) #f))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Elements"
+                                 "column: Units")))
+  ((lambda (option) (if option ((gnc:option-setter option) #f))) option))
+
+
+; Section: General
+
+(let ((option (gnc:lookup-option options
+                                 "General"
+                                 "Report Currency")))
+  ((lambda (option) (if option ((gnc:option-setter option) "ZAR"))) option))
+
+
+; Section: Notes
+
+(let ((option (gnc:lookup-option options
+                                 "Notes"
+                                 "Embedded CSS")))
+  ((lambda (option) (if option ((gnc:option-setter option) ""))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Notes"
+                                 "Extra notes")))
+  ((lambda (option) (if option ((gnc:option-setter option) "Please make payment into the following bank account:\n\nBank: Capitec\nBranch: Tyger Valley\nAccounr Nr: 1508618176\nBranch Code: 470010\n\nPlease email proof of payment to billing@charlesmulder.net"))) option))
+
+
+; Section: Display
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "table-cell-border-color")))
+  ((lambda (option) (if option ((gnc:option-setter option) ""))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Display"
+                                 "table-header-border-color")))
+  ((lambda (option) (if option ((gnc:option-setter option) ""))) option))
+
+
+; Section: Headings 1
+
+(let ((option (gnc:lookup-option options
+                                 "Headings 1"
+                                 "Unit Price")))
+  ((lambda (option) (if option ((gnc:option-setter option) "Rate"))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Headings 1"
+                                 "Total Price")))
+  ((lambda (option) (if option ((gnc:option-setter option) "Amount"))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Headings 1"
+                                 "Report title")))
+  ((lambda (option) (if option ((gnc:option-setter option) "INVOICE"))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Headings 1"
+                                 "Qty")))
+  ((lambda (option) (if option ((gnc:option-setter option) "Hours"))) option))
+
+
+; Section: Headings 2
+
+(let ((option (gnc:lookup-option options
+                                 "Headings 2"
+                                 "To text")))
+  ((lambda (option) (if option ((gnc:option-setter option) "Bill To: "))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "Headings 2"
+                                 "Invoice number text")))
+  ((lambda (option) (if option ((gnc:option-setter option) "Invoice number #: "))) option))
+
+  options))
+ (gnc:define-report 
+  'version 1
+  'name "PayPal Tax Invoice"
+  'report-guid "2afbc2675eb74afe8782a223e651c829"
+  'parent-type "ffaaf1faa7c84853b72e8d544f2f532a"
+  'options-generator options-gen
+  'menu-path (list gnc:menuname-custom)
+  'renderer (gnc:report-template-renderer/report-guid "ffaaf1faa7c84853b72e8d544f2f532a" "PayPal Tax Invoice")))
+
