@@ -211,9 +211,9 @@
       </tr>
       <?scm )) ?>
       <?scm (if (equal? postdate (cons 0 0)) (begin ?>
-        <tr>
+        <!--<tr>
            <td colspan="2" align="right"><?scm:d (_ "Invoice in progress...") ?></td>
-        </tr>
+        </tr>-->
       <?scm ) (begin ?>
         <tr>
            <td align="right"><?scm:d (nbsp (_ "Invoice Date")) ?>:&nbsp;</td>

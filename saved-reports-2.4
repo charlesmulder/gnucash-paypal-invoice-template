@@ -26,6 +26,11 @@
 
 (let ((option (gnc:lookup-option options
                                  "General"
+                                 "Invoice Number")))
+  ((lambda (option) (if option ((gnc:option-setter option) '"4b02737d3da05d8950d1eca9530bbf89"))) option))
+
+(let ((option (gnc:lookup-option options
+                                 "General"
                                  "Report Currency")))
   ((lambda (option) (if option ((gnc:option-setter option) "ZAR"))) option))
 
@@ -40,7 +45,7 @@
 (let ((option (gnc:lookup-option options
                                  "Notes"
                                  "Extra notes")))
-  ((lambda (option) (if option ((gnc:option-setter option) "Please make payment into the following bank account:\n\nBank: Capitec\nBranch: Tyger Valley\nAccounr Nr: 1508618176\nBranch Code: 470010\n\nPlease email proof of payment to billing@charlesmulder.net"))) option))
+  ((lambda (option) (if option ((gnc:option-setter option) "Please make payment into the following bank account:\n\nBank: Capitec\nBranch: Tyger Valley\nAccounr Nr: 1508618176\nBranch Code: 470010\n\nPlease email proof of payment to charlesmulder@protonmail.com"))) option))
 
 
 ; Section: Display

@@ -19,3 +19,8 @@ Start GnuCash and navigate to ```Reports > Saved Report Configurations > PayPal 
 * [Custom Reports Using Eguile](https://wiki.gnucash.org/wiki/Custom_Reports_Using_Eguile)
 * [Custom Reports](https://wiki.gnucash.org/wiki/Custom_Reports)
 
+# SQLite Backend
+
+```
+sudo apt install libdbd-sqlite3
+```
